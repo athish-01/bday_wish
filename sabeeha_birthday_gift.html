@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday, Sabeeha!</title>
+<style>
+:root{--grass:#70c44b;--dirt:#8b5a35;--stone:#777e82;--gold:#ffd65a;--night:#101a2c}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;color:#fff;font-family:system-ui,-apple-system,Segoe UI,sans-serif;background:linear-gradient(#13223d 0 58%,#263c34 58%);overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.16;background-image:linear-gradient(90deg,#fff 1px,transparent 1px),linear-gradient(#fff 1px,transparent 1px);background-size:32px 32px}
+.sky{position:fixed;inset:0;pointer-events:none;overflow:hidden}
+.star{position:absolute;width:4px;height:4px;background:#fff;box-shadow:0 0 9px #fff;animation:twinkle 2s infinite alternate}
+@keyframes twinkle{to{opacity:.25;transform:scale(.6)}}
+.moon{position:absolute;right:12%;top:9%;width:64px;height:64px;background:#fff0ad;box-shadow:0 0 35px #ffeaa0;border-radius:8px}
+.land{position:fixed;bottom:0;left:0;right:0;height:17vh;background:repeating-linear-gradient(90deg,#5c9f3b 0 32px,#4d8c33 32px 64px);border-top:18px solid #7cc84c;z-index:-1}
+.land:after{content:"";position:absolute;inset:18px 0 0;background:repeating-linear-gradient(90deg,#80512f 0 32px,#704329 32px 64px),repeating-linear-gradient(#80512f 0 32px,#704329 32px 64px)}
+main{width:min(760px,92vw);margin:0 auto;padding:42px 0 70px;text-align:center}
+.tag{display:inline-block;padding:8px 14px;background:#26394e;border:3px solid #a9c4d9;box-shadow:4px 4px 0 #0b1423;font-weight:800;letter-spacing:2px;font-size:12px}
+h1{font-size:clamp(2.3rem,8vw,4.7rem);line-height:1;margin:20px 0 10px;text-shadow:5px 5px 0 #285b31,8px 8px 0 #101a2c;letter-spacing:1px}
+.subtitle{color:#d9e8f5;font-size:1rem;margin-bottom:32px}
+.scene{perspective:1000px;margin:25px auto 18px;min-height:300px;display:grid;place-items:center}
+.gift{position:relative;width:min(330px,78vw);height:230px;cursor:pointer;transform-style:preserve-3d;transition:transform .7s cubic-bezier(.2,.8,.2,1);filter:drop-shadow(12px 18px 0 #09111b)}
+.gift:hover{transform:translateY(-7px) rotate(-1deg)}
+.box{position:absolute;inset:42px 0 0;background:#c83f49;border:8px solid #792b39;box-shadow:inset -13px -13px 0 #9b303b,inset 10px 10px 0 #e65b61}
+.ribbon-v{position:absolute;top:42px;bottom:0;left:42%;width:16%;background:#ffdb62;border-left:5px solid #c58d36;border-right:5px solid #c58d36;z-index:2}
+.ribbon-h{position:absolute;left:0;right:0;top:58%;height:19%;background:#ffdb62;border-top:5px solid #c58d36;border-bottom:5px solid #c58d36;z-index:3}
+.lid{position:absolute;z-index:4;left:-13px;top:24px;width:calc(100% + 26px);height:62px;background:#ed6265;border:8px solid #792b39;box-shadow:inset -10px -10px 0 #bd424a;transform-origin:12% 90%;transition:transform .9s cubic-bezier(.2,.8,.2,1)}
+.bow{position:absolute;z-index:5;top:-14px;left:39%;width:74px;height:48px}
+.bow:before,.bow:after{content:"";position:absolute;width:38px;height:28px;background:#ffdb62;border:6px solid #c58d36;border-radius:50% 50% 0 50%}
+.bow:before{left:0;transform:rotate(25deg)}.bow:after{right:0;transform:scaleX(-1) rotate(25deg)}
+.knot{position:absolute;left:28px;top:13px;width:20px;height:20px;background:#ffe17a;border:5px solid #c58d36;z-index:2}
+.gift.open{transform:translateY(20px) rotateX(8deg)}
+.gift.open .lid{transform:translateY(-105px) rotate(-18deg)}
+.hint{font-weight:800;color:#ffe48a;letter-spacing:1px;text-shadow:2px 2px #182638;animation:pulse 1.3s infinite}
+@keyframes pulse{50%{opacity:.55}}
+.card{display:none;margin:22px auto 0;text-align:left;background:#f5e7bd;color:#293b2e;border:8px solid #8a6038;box-shadow:8px 8px 0 #101a2c;padding:24px;width:min(650px,92vw);position:relative}
+.card.show{display:block;animation:pop .65s ease both}
+@keyframes pop{from{opacity:0;transform:translateY(25px) scale(.94)}to{opacity:1;transform:none}}
+.card h2{text-align:center;color:#a8323c;font-size:2rem;margin:0 0 8px}
+.lead{text-align:center;font-weight:800;font-size:1.1rem}
+.message{text-align:center;font-size:1.05rem;line-height:1.65}
+.pixel-line{height:8px;background:repeating-linear-gradient(90deg,#6a9e48 0 16px,#a6c76a 16px 32px);margin:18px 0}
+.controls{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:16px}
+button{font:inherit;font-weight:800;border:3px solid #273b2d;background:#77bf4b;color:#122313;padding:10px 15px;cursor:pointer;box-shadow:4px 4px 0 #273b2d}
+button:hover{transform:translate(-1px,-1px);box-shadow:5px 5px 0 #273b2d}
+button:active{transform:translate(3px,3px);box-shadow:1px 1px 0 #273b2d}
+.langbox{margin-top:20px;background:#26394e;border:3px solid #9eb5c8;padding:14px;text-align:center;box-shadow:5px 5px 0 #0b1423}
+.langbox label{display:block;font-weight:800;margin-bottom:8px}
+select{max-width:100%;padding:9px;background:#f5e7bd;border:3px solid #8a6038;color:#24352a;font-weight:700}
+.counter{font-size:.8rem;color:#d4e1ee;margin-top:10px}
+footer{margin-top:35px;color:#d8e5ed;font-size:.8rem}
+@media(max-width:480px){main{padding-top:28px}.scene{min-height:260px}.gift{height:200px}.box{top:38px}.lid{top:20px;height:58px}.ribbon-v{top:38px}.card{padding:18px}}
+</style>
+
+<style>
+.name-wall{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.name-word{position:absolute;white-space:nowrap;font-weight:1000;opacity:.14;color:#fff;text-shadow:3px 3px 0 #142238;animation:drift 13s ease-in-out infinite alternate;user-select:none}
+.name-word:nth-child(3n){color:#ffe58a;font-family:Georgia,serif;font-style:italic}
+.name-word:nth-child(3n+1){color:#b9f2a0;font-family:cursive}
+.name-word:nth-child(3n+2){color:#ffc0d0;font-family:system-ui;font-weight:900;letter-spacing:3px}
+@keyframes drift{from{transform:translate3d(-12px,8px,0) rotate(-8deg)}to{transform:translate3d(18px,-18px,0) rotate(8deg)}}
+.food-layer{position:fixed;inset:0;z-index:1;pointer-events:none;overflow:hidden}
+.food{position:absolute;left:var(--x);top:110%;font-size:clamp(24px,4vw,42px);filter:drop-shadow(2px 3px 0 #172238);opacity:.9;animation:foodfloat var(--duration) linear infinite;animation-delay:var(--delay);pointer-events:auto;cursor:pointer;transition:filter .2s}
+.food:hover{filter:drop-shadow(0 0 12px #ffe58a) brightness(1.25);transform:scale(1.35)}
+@keyframes foodfloat{0%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-58vh) rotate(25deg)}100%{transform:translateY(-125vh) rotate(-25deg)}}
+main{position:relative;z-index:2}
+.food-tip{font-size:.78rem;color:#d9e8f5;margin-top:8px}
+#snackToast{position:fixed;left:50%;bottom:18px;transform:translate(-50%,20px);opacity:0;z-index:20;background:#fff0b5;color:#273b2d;border:3px solid #8a6038;padding:10px 16px;font-weight:900;box-shadow:4px 4px 0 #101a2c;transition:.25s;pointer-events:none}
+#snackToast.show{opacity:1;transform:translate(-50%,0)}
+</style>
+
+</head>
+<body>
+
+<div class="name-wall" aria-hidden="true" id="nameWall"></div>
+<div class="food-layer" aria-label="Floating birthday treats" id="foodLayer"></div>
+<div id="snackToast">YUM! A birthday treat! 🍰</div>
+
+<div class="sky" aria-hidden="true"><div class="moon"></div></div>
+<div class="land" aria-hidden="true"></div>
+<main>
+  <div class="tag">✦ A SPECIAL WORLD HAS SPAWNED ✦</div>
+  <h1>HAPPY BIRTHDAY<br>SABEEHA!</h1>
+  <p class="subtitle">A little surprise, crafted just for you. Ready to open your gift?</p><p class="food-tip">✦ Tap the floating treats and watch Sabeeha’s name drift through the world ✦</p>
+  <div class="scene">
+    <div class="gift" id="gift" role="button" tabindex="0" aria-label="Knock to open the birthday gift">
+      <div class="box"></div><div class="ribbon-v"></div><div class="ribbon-h"></div>
+      <div class="lid"></div><div class="bow"><div class="knot"></div></div>
+    </div>
+  </div>
+  <div class="hint" id="hint">🔨 KNOCK KNOCK TO OPEN YOUR GIFT 🔨</div>
+  <section class="card" id="card" aria-live="polite">
+    <h2>✦ YOU UNLOCKED IT! ✦</h2>
+    <p class="lead">Dear Sabeeha,</p>
+    <p class="message">Wishing you a day filled with laughter, lovely surprises, and memories worth keeping. May this new year of your life bring you happiness, courage, good health, and countless reasons to smile. Keep being wonderfully you. Happy Birthday! 🎂</p>
+    <div class="pixel-line"></div>
+    <p class="message"><strong>One wish. One hundred languages. Infinite good vibes.</strong></p>
+    <div class="langbox">
+      <label for="language">🌍 Read your birthday wish in 100 languages</label>
+      <select id="language"></select>
+      <p class="message" id="translation">Happy Birthday, Sabeeha!</p>
+      <div class="counter" id="counter">Language 1 of 100</div>
+    </div>
+    <div class="controls">
+      <button id="prev">← Previous</button><button id="next">Next language →</button>
+      <button id="confetti">✨ More sparkle</button>
+    </div>
+  </section>
+  <footer>Built with pixels, pixels, and a little birthday magic.</footer>
+</main>
+<script>
+const wishes = [
+["English","Happy Birthday, Sabeeha!"],
+["Hindi","जन्मदिन मुबारक हो, सबीहा!"],
+["Tamil","இனிய பிறந்தநாள் வாழ்த்துகள், சபீஹா!"],
+["Telugu","పుట్టినరోజు శుభాకాంక్షలు, సబీహా!"],
+["Kannada","ಜನ್ಮದಿನದ ಶುಭಾಶಯಗಳು, ಸಬೀಹಾ!"],
+["Malayalam","ജന്മദിനാശംസകൾ, സബീഹാ!"],
+["Bengali","শুভ জন্মদিন, সাবীহা!"],
+["Marathi","वाढदिवसाच्या हार्दिक शुभेच्छा, सबीहा!"],
+["Gujarati","જન્મદિવસની શુભેચ્છાઓ, સબીહા!"],
+["Punjabi","ਜਨਮਦਿਨ ਮੁਬਾਰਕ, ਸਬੀਹਾ!"],
+["Urdu","سالگرہ مبارک، صبیحہ!"],
+["Arabic","عيد ميلاد سعيد يا صبيحة!"],
+["Persian","تولدت مبارک، صبیحه!"],
+["Turkish","Doğum günün kutlu olsun, Sabeeha!"],
+["French","Joyeux anniversaire, Sabeeha !"],
+["Spanish","¡Feliz cumpleaños, Sabeeha!"],
+["Portuguese","Feliz aniversário, Sabeeha!"],
+["Italian","Buon compleanno, Sabeeha!"],
+["German","Alles Gute zum Geburtstag, Sabeeha!"],
+["Dutch","Fijne verjaardag, Sabeeha!"],
+["Afrikaans","Gelukkige verjaarsdag, Sabeeha!"],
+["Swedish","Grattis på födelsedagen, Sabeeha!"],
+["Norwegian","Gratulerer med dagen, Sabeeha!"],
+["Danish","Tillykke med fødselsdagen, Sabeeha!"],
+["Finnish","Hyvää syntymäpäivää, Sabeeha!"],
+["Icelandic","Til hamingju með afmælið, Sabeeha!"],
+["Irish","Lá breithe sona duit, Sabeeha!"],
+["Welsh","Pen-blwydd hapus, Sabeeha!"],
+["Scottish Gaelic","Co-là breith sona dhut, Sabeeha!"],
+["Greek","Χρόνια πολλά, Sabeeha!"],
+["Russian","С днём рождения, Сабиха!"],
+["Ukrainian","З днем народження, Сабіха!"],
+["Polish","Wszystkiego najlepszego z okazji urodzin, Sabeeha!"],
+["Czech","Všechno nejlepší k narozeninám, Sabeeha!"],
+["Slovak","Všetko najlepšie k narodeninám, Sabeeha!"],
+["Slovenian","Vse najboljše za rojstni dan, Sabeeha!"],
+["Croatian","Sretan rođendan, Sabeeha!"],
+["Serbian","Срећан рођендан, Сабиха!"],
+["Bosnian","Sretan rođendan, Sabeeha!"],
+["Bulgarian","Честит рожден ден, Сабиха!"],
+["Romanian","La mulți ani, Sabeeha!"],
+["Hungarian","Boldog születésnapot, Sabeeha!"],
+["Albanian","Gëzuar ditëlindjen, Sabeeha!"],
+["Lithuanian","Su gimtadieniu, Sabeeha!"],
+["Latvian","Daudz laimes dzimšanas dienā, Sabeeha!"],
+["Estonian","Palju õnne sünnipäevaks, Sabeeha!"],
+["Armenian","Ծնունդդ շնորհավոր, Սաբիհա։"],
+["Georgian","გილოცავ დაბადების დღეს, საბიჰა!"],
+["Hebrew","יום הולדת שמח, סביחה!"],
+["Kurdish","Rojbûna te pîroz be, Sabeeha!"],
+["Pashto","د زوکړې ورځ دې مبارک شه، صبیحه!"],
+["Chinese (Mandarin)","生日快乐，Sabeeha！"],
+["Japanese","お誕生日おめでとう、Sabeeha！"],
+["Korean","생일 축하해요, Sabeeha!"],
+["Vietnamese","Chúc mừng sinh nhật, Sabeeha!"],
+["Thai","สุขสันต์วันเกิดนะ ซาบีฮา!"],
+["Lao","ສຸກສັນວັນເກີດ, Sabeeha!"],
+["Khmer","រីករាយថ្ងៃកំណើត សប៊ីហា!"],
+["Burmese","မွေးနေ့မှာ ပျော်ရွှင်ပါစေ Sabeeha!"],
+["Indonesian","Selamat ulang tahun, Sabeeha!"],
+["Malay","Selamat hari lahir, Sabeeha!"],
+["Filipino","Maligayang kaarawan, Sabeeha!"],
+["Javanese","Sugeng ambal warsa, Sabeeha!"],
+["Sundanese","Wilujeng tepang taun, Sabeeha!"],
+["Mongolian","Төрсөн өдрийн мэнд хүргэе, Сабиха!"],
+["Kazakh","Туған күніңмен, Сабиха!"],
+["Uzbek","Tug‘ilgan kuningiz bilan, Sabeeha!"],
+["Kyrgyz","Туулган күнүң менен, Сабиха!"],
+["Tajik","Зодрӯз муборак, Sabeeha!"],
+["Azerbaijani","Ad günün mübarək, Sabeeha!"],
+["Swahili","Heri ya siku ya kuzaliwa, Sabeeha!"],
+["Amharic","መልካም ልደት፣ Sabeeha!"],
+["Somali","Dhalasho wacan, Sabeeha!"],
+["Yoruba","Ẹ kú ọjọ́ ìbí, Sabeeha!"],
+["Igbo","Ezi ụbọchị ọmụmụ, Sabeeha!"],
+["Hausa","Barka da ranar haihuwa, Sabeeha!"],
+["Zulu","Usuku oluhle lokuzalwa, Sabeeha!"],
+["Xhosa","Usuku lokuzalwa olumnandi, Sabeeha!"],
+["Shona","Bhavhadhe rakanaka, Sabeeha!"],
+["Sesotho","Letsatsi le monate la tsoalo, Sabeeha!"],
+["Kinyarwanda","Isabukuru nziza, Sabeeha!"],
+["Malagasy","Tratry ny tsingerintaona nahaterahana, Sabeeha!"],
+["Esperanto","Feliĉan naskiĝtagon, Sabeeha!"],
+["Latin","Felix dies natalis, Sabeeha!"],
+["Haitian Creole","Bòn fèt, Sabeeha!"],
+["Quechua","Kusisqa punchawniykipi, Sabeeha!"],
+["Guarani","Vy'apavẽ nde arambotyre, Sabeeha!"],
+["Māori","Rā whānau kia koe, Sabeeha!"],
+["Hawaiian","Hauʻoli lā hānau, Sabeeha!"],
+["Samoan","Manuia lou aso fanau, Sabeeha!"],
+["Tongan","Fiefia he ʻaho fāʻeleʻi, Sabeeha!"],
+["Fijian","Marau na siga ni sucu, Sabeeha!"],
+["Basque","Zorionak zure urtebetetzean, Sabeeha!"],
+["Catalan","Per molts anys, Sabeeha!"],
+["Galician","Feliz aniversario, Sabeeha!"],
+["Luxembourgish","Alles Guddes fir de Gebuertsdag, Sabeeha!"],
+["Maltese","Awguri f'għeluq sninek, Sabeeha!"],
+["Yiddish","אַ פריילעכן געבורטסטאָג, Sabeeha!"],
+["Bhojpuri","जन्मदिन के बहुत-बहुत बधाई, सबीहा!"],
+["Sanskrit","जन्मदिनस्य शुभाशयाः, सबीहा!"],
+["Odia","ଜନ୍ମଦିନର ଶୁଭେଚ୍ଛା, ସବୀହା!"],
+["Assamese","জন্মদিনৰ শুভেচ্ছা, চবীহা!"],
+["Nepali","जन्मदिनको शुभकामना, सबीहा!"]
+];
+const gift=document.getElementById('gift'), card=document.getElementById('card'), hint=document.getElementById('hint');
+function openGift(){if(gift.classList.contains('open'))return;gift.classList.add('open');hint.textContent='🎉 SURPRISE UNLOCKED!';setTimeout(()=>card.classList.add('show'),450);setTimeout(()=>card.scrollIntoView({behavior:'smooth',block:'nearest'}),500)}
+gift.addEventListener('click',openGift);
+gift.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openGift()}});
+const select=document.getElementById('language'), translation=document.getElementById('translation'), counter=document.getElementById('counter');
+wishes.forEach((w,i)=>{const o=document.createElement('option');o.value=i;o.textContent=(i+1)+'. '+w[0];select.appendChild(o)});
+function show(i){i=(i+wishes.length)%wishes.length;select.value=i;translation.textContent=wishes[i][1];counter.textContent=`Language ${i+1} of ${wishes.length} · ${wishes[i][0]}`}
+select.addEventListener('change',()=>show(+select.value));
+document.getElementById('prev').onclick=()=>show(+select.value-1);
+document.getElementById('next').onclick=()=>show(+select.value+1);
+document.getElementById('confetti').onclick=()=>{for(let i=0;i<35;i++){const p=document.createElement('i');p.textContent=['✦','✧','◆','★','✿'][Math.floor(Math.random()*5)];p.style.cssText=`position:fixed;left:${Math.random()*100}vw;top:-20px;z-index:9;color:${['#ffe36b','#8ee66b','#ff8c9b','#a8d9ff'][i%4]};font-size:${14+Math.random()*20}px;pointer-events:none;animation:fall ${1.5+Math.random()*2}s linear forwards`;document.body.appendChild(p);setTimeout(()=>p.remove(),4000)}};
+const style=document.createElement('style');style.textContent='@keyframes fall{to{transform:translateY(110vh) rotate(700deg);opacity:0}}';document.head.appendChild(style);
+for(let i=0;i<55;i++){const s=document.createElement('i');s.className='star';s.style.left=Math.random()*100+'%';s.style.top=Math.random()*48+'%';s.style.animationDelay=Math.random()*2+'s';document.querySelector('.sky').appendChild(s)}
+show(0);
+
+// A soft wallpaper of Sabeeha's name in different scripts and styles.
+const nameVariants = [
+  "Sabeeha","سبيحة","صبيحة","सबीहा","சபீஹா","సబీహా","ಸಬೀಹಾ","സബീഹാ",
+  "সাবীহা","સબીહા","سبیحہ","Sabīḥa","Sabeeha ✦","S A B E E H A",
+  "사비하","サビーア","萨比哈","ซาบีฮา","Сабиха","საბიჰა"
+];
+const wall = document.getElementById('nameWall');
+nameVariants.forEach((name,i)=>{
+  const el=document.createElement('span');
+  el.className='name-word'; el.textContent=name;
+  el.style.left=((i*23)%91)+'%';
+  el.style.top=((i*17)%91)+'%';
+  el.style.fontSize=(18+(i%5)*9)+'px';
+  el.style.animationDelay=-(i%7)+'s';
+  el.style.animationDuration=(10+(i%6)*3)+'s';
+  wall.appendChild(el);
+});
+
+// Floating food "GIF-like" stickers: lightweight CSS animations, no downloads needed.
+const treats=['🍰','🧁','🍕','🍟','🍔','🍩','🍪','🍓','🍉','🍒','🍫','🍿','🥞','🍦','🍭','🥐','🍜','🍣','🍦','🎂'];
+const foodLayer=document.getElementById('foodLayer');
+const toast=document.getElementById('snackToast');
+treats.forEach((food,i)=>{
+  const el=document.createElement('span');
+  el.className='food'; el.textContent=food;
+  el.style.setProperty('--x',(i*37%96)+'%');
+  el.style.setProperty('--duration',(13+(i%7)*2)+'s');
+  el.style.setProperty('--delay',(-i*1.7)+'s');
+  el.title='Tap for a birthday treat!';
+  el.addEventListener('click',()=>{
+    toast.textContent=['YUM! Birthday calories don’t count today! 🍰','A snack just spawned! 🍕','Sweet loot unlocked! 🍩','Sabeeha gets the legendary treat! 🧁'][Math.floor(Math.random()*4)];
+    toast.classList.add('show');
+    el.animate([{transform:'scale(1)'},{transform:'scale(1.8) rotate(25deg)'},{transform:'scale(0)',opacity:0}],{duration:450});
+    setTimeout(()=>{el.remove();toast.classList.remove('show')},900);
+  });
+  foodLayer.appendChild(el);
+});
+
+</script>
+</body>
+</html>
